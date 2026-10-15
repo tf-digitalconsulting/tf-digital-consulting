@@ -1,0 +1,530 @@
+/* TF DIGITAL CONSULTING - IDENTITE VISUELLE*/
+:root {
+    --encre: #12203A;
+    --papier: #F6F8FA;
+    --sarcelle: #0B7A75;
+    --sarcelle-clair: #5CC8C1;
+    --rouge: #D7263D;
+    --gris: #4B5568;
+    --filet: #DDE3EA;
+    --blanc: #FFFFFF;
+ 
+    --titre: 'Bricolage Grotesque', 'Segoe UI', Arial, sans-serif;
+    --texte: 'Public Sans', 'Segoe UI', Arial, sans-serif;
+ 
+    --marge: max(24px, calc((100% - 1100px) / 2));
+}
+ 
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+ 
+html {
+    scroll-behavior: smooth;
+}
+ 
+body {
+    font-family: var(--texte);
+    font-size: 17px;
+    line-height: 1.6;
+    color: var(--gris);
+    background: var(--blanc);
+}
+ 
+section[id] {
+    scroll-margin-top: 80px;
+}
+ 
+a:focus-visible,
+button:focus-visible,
+input:focus-visible,
+select:focus-visible,
+textarea:focus-visible {
+    outline: 3px solid var(--sarcelle-clair);
+    outline-offset: 3px;
+}
+ 
+/* =========================
+   MENU
+========================= */
+ 
+header {
+    position: sticky;
+    top: 0;
+    z-index: 50;
+    background: var(--blanc);
+    border-bottom: 1px solid var(--filet);
+}
+ 
+.navbar {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 24px;
+    padding: 16px var(--marge);
+}
+ 
+.logo {
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    font-family: var(--titre);
+    font-weight: 700;
+    font-size: 20px;
+    color: var(--encre);
+    text-decoration: none;
+}
+ 
+.logo-mark {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 38px;
+    height: 38px;
+    border-radius: 8px;
+    background: var(--encre);
+    color: var(--blanc);
+    font-size: 17px;
+    font-weight: 800;
+    box-shadow: inset 0 -4px 0 var(--rouge);
+}
+ 
+.menu {
+    display: flex;
+    gap: 28px;
+    list-style: none;
+}
+ 
+.menu a {
+    color: var(--encre);
+    text-decoration: none;
+    font-weight: 600;
+    font-size: 16px;
+    padding: 6px 0;
+    border-bottom: 2px solid transparent;
+    transition: border-color 0.2s, color 0.2s;
+}
+ 
+.menu a:hover {
+    color: var(--sarcelle);
+    border-bottom-color: var(--rouge);
+}
+ 
+/* =========================
+   ACCUEIL
+========================= */
+ 
+.hero {
+    position: relative;
+    overflow: hidden;
+    padding: clamp(64px, 10vw, 128px) var(--marge);
+    background: var(--encre);
+    color: #C5CEDD;
+}
+ 
+.hero-content {
+    position: relative;
+    z-index: 1;
+    max-width: 620px;
+}
+ 
+.sur-titre {
+    font-size: 15px;
+    font-weight: 600;
+    color: var(--sarcelle-clair);
+    margin-bottom: 20px;
+    padding-left: 14px;
+    border-left: 3px solid var(--rouge);
+}
+ 
+.hero h1 {
+    font-family: var(--titre);
+    font-weight: 800;
+    font-size: clamp(38px, 6vw, 64px);
+    line-height: 1.05;
+    letter-spacing: -0.02em;
+    color: var(--blanc);
+}
+ 
+.hero .description {
+    margin-top: 24px;
+    max-width: 52ch;
+    font-size: 19px;
+    color: #C5CEDD;
+}
+ 
+.boutons {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 14px;
+    margin-top: 36px;
+}
+ 
+/* La feuille de document (seul élément décoratif du site) */
+.hero::after {
+    content: "";
+    position: absolute;
+    right: max(24px, calc((100% - 1100px) / 2 + 24px));
+    top: 50%;
+    width: 300px;
+    height: 390px;
+    border-radius: 6px;
+    transform: translateY(-50%) rotate(4deg);
+    background:
+        linear-gradient(var(--rouge), var(--rouge)) 36px 112px / 132px 3px no-repeat,
+        linear-gradient(var(--encre), var(--encre)) 36px 44px / 170px 14px no-repeat,
+        linear-gradient(var(--sarcelle), var(--sarcelle)) 36px 74px / 90px 8px no-repeat,
+        repeating-linear-gradient(to bottom, transparent 0, transparent 27px, var(--filet) 27px, var(--filet) 28px) 36px 140px / calc(100% - 72px) 224px no-repeat,
+        var(--blanc);
+    box-shadow: 14px 14px 0 rgba(255, 255, 255, 0.08);
+}
+ 
+/* =========================
+   BOUTONS
+========================= */
+ 
+.btn {
+    display: inline-block;
+    padding: 14px 28px;
+    border-radius: 6px;
+    background: var(--sarcelle);
+    border: 2px solid var(--sarcelle);
+    color: var(--blanc);
+    font-family: var(--texte);
+    font-weight: 700;
+    font-size: 16px;
+    text-decoration: none;
+    cursor: pointer;
+    transition: background 0.2s, border-color 0.2s;
+}
+ 
+.btn:hover {
+    background: #096560;
+    border-color: #096560;
+}
+ 
+.btn-secondaire {
+    background: transparent;
+    border-color: #6F7E99;
+    color: var(--blanc);
+}
+ 
+.btn-secondaire:hover {
+    background: rgba(255, 255, 255, 0.1);
+    border-color: var(--blanc);
+}
+ 
+/* =========================
+   TITRES DES SECTIONS
+========================= */
+ 
+.section,
+.services-section,
+.realisations-section {
+    padding: clamp(56px, 8vw, 96px) var(--marge);
+}
+ 
+.titre-section {
+    display: block;
+    font-size: 15px;
+    font-weight: 700;
+    color: var(--sarcelle);
+    margin-bottom: 14px;
+}
+ 
+.titre-section::before {
+    content: "";
+    display: block;
+    width: 28px;
+    height: 3px;
+    margin-bottom: 12px;
+    background: var(--rouge);
+}
+ 
+h2 {
+    font-family: var(--titre);
+    font-weight: 800;
+    font-size: clamp(28px, 4vw, 42px);
+    line-height: 1.12;
+    letter-spacing: -0.015em;
+    color: var(--encre);
+    max-width: 20em;
+}
+ 
+.texte-section {
+    margin-top: 20px;
+    max-width: 62ch;
+}
+ 
+.section-introduction {
+    margin-bottom: 40px;
+}
+ 
+/* =========================
+   SERVICES
+========================= */
+ 
+.services-section {
+    --fond: var(--papier);
+    background: var(--fond);
+}
+ 
+.services {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 24px;
+}
+ 
+.service,
+.realisation-carte {
+    position: relative;
+    padding: 32px;
+    border: 1px solid var(--filet);
+    border-radius: 6px;
+}
+ 
+.service {
+    background: var(--blanc);
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+}
+ 
+/* Coin de feuille pliée */
+.service::before,
+.realisation-carte::before {
+    content: "";
+    position: absolute;
+    top: -1px;
+    right: -1px;
+    border-style: solid;
+    border-width: 0 26px 26px 0;
+    border-color: transparent var(--fond) var(--filet) transparent;
+}
+ 
+.numero {
+    display: none;
+}
+ 
+.service h3,
+.realisation-carte h3 {
+    font-family: var(--titre);
+    font-weight: 700;
+    font-size: 22px;
+    line-height: 1.2;
+    color: var(--encre);
+}
+ 
+.service p,
+.realisation-carte p {
+    margin-top: 12px;
+}
+ 
+.service-link {
+    display: inline-block;
+    margin-top: auto;
+    padding-top: 22px;
+    color: var(--sarcelle);
+    font-weight: 700;
+    text-decoration: underline;
+    text-decoration-thickness: 2px;
+    text-underline-offset: 5px;
+    transition: color 0.2s;
+}
+ 
+.service-link:hover {
+    color: var(--rouge);
+}
+ 
+/* =========================
+   RÉALISATIONS
+========================= */
+ 
+.realisations-section {
+    --fond: var(--blanc);
+    background: var(--fond);
+}
+ 
+.realisations-grille {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 24px;
+    margin-top: 8px;
+}
+ 
+.realisation-carte {
+    background: var(--papier);
+}
+ 
+.carte-haut {
+    margin-bottom: 18px;
+}
+ 
+.carte-num {
+    display: none;
+}
+ 
+.carte-cat {
+    display: inline-block;
+    padding: 4px 12px;
+    border-radius: 999px;
+    background: #DCEFEE;
+    color: #07514D;
+    font-size: 14px;
+    font-weight: 700;
+}
+ 
+/* =========================
+   CONTACT
+========================= */
+ 
+.contact {
+    padding: clamp(56px, 8vw, 96px) var(--marge);
+    background: var(--encre);
+    color: #C5CEDD;
+}
+ 
+.contact-content {
+    max-width: 760px;
+}
+ 
+.contact .titre-section {
+    color: var(--sarcelle-clair);
+}
+ 
+.contact h2 {
+    color: var(--blanc);
+}
+ 
+.contact-intro {
+    margin-top: 18px;
+    max-width: 56ch;
+    color: #C5CEDD;
+}
+ 
+.contact-form {
+    margin-top: 36px;
+    padding: clamp(24px, 4vw, 40px);
+    border-radius: 6px;
+    background: var(--blanc);
+    color: var(--gris);
+}
+ 
+.form-group {
+    margin-bottom: 22px;
+}
+ 
+.form-group label {
+    display: block;
+    margin-bottom: 8px;
+    font-weight: 700;
+    font-size: 15px;
+    color: var(--encre);
+}
+ 
+.form-group label span {
+    font-weight: 400;
+    color: var(--gris);
+}
+ 
+.form-group input,
+.form-group select,
+.form-group textarea {
+    width: 100%;
+    padding: 13px 14px;
+    border: 1.5px solid #B7C1CE;
+    border-radius: 6px;
+    background: var(--blanc);
+    font-family: var(--texte);
+    font-size: 16px;
+    color: var(--encre);
+}
+ 
+.form-group textarea {
+    resize: vertical;
+    min-height: 140px;
+}
+ 
+.form-group input:focus,
+.form-group select:focus,
+.form-group textarea:focus {
+    border-color: var(--sarcelle);
+}
+ 
+.form-group input[type="file"] {
+    padding: 10px;
+    background: var(--papier);
+}
+ 
+.form-group small {
+    display: block;
+    margin-top: 8px;
+    font-size: 14px;
+    color: var(--gris);
+}
+ 
+.formulaire-btn {
+    width: 100%;
+    padding: 16px 28px;
+    font-size: 17px;
+}
+ 
+/* =========================
+   PIED DE PAGE
+========================= */
+ 
+footer {
+    padding: 28px var(--marge);
+    background: #0C1729;
+    color: #AAB5C8;
+    font-size: 15px;
+}
+ 
+/* =========================
+   TÉLÉPHONE ET PETITS ÉCRANS
+========================= */
+ 
+@media (max-width: 1000px) {
+    .hero::after {
+        display: none;
+    }
+}
+ 
+@media (max-width: 768px) {
+    .navbar {
+        flex-direction: column;
+        gap: 14px;
+    }
+ 
+    .menu {
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 8px 20px;
+    }
+ 
+    .hero .description {
+        font-size: 18px;
+    }
+ 
+    .boutons .btn {
+        flex: 1 1 100%;
+        text-align: center;
+    }
+ 
+    .service,
+    .realisation-carte {
+        padding: 26px;
+    }
+}
+ 
+@media (prefers-reduced-motion: reduce) {
+    html {
+        scroll-behavior: auto;
+    }
+ 
+    * {
+        transition: none !important;
+    }
+}
