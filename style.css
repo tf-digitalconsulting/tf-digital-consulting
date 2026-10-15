@@ -832,7 +832,7 @@ footer {
     background: var(--blanc);
 }
 
-.temoignages-grille {
+.temoignage-grille {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
     gap: 24px;
