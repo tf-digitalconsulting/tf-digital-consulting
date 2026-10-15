@@ -1,4 +1,4 @@
-/* =========================
+/*===========================
    OUTIL D'ANALYSE DE DOCUMENT
 ========================= */
 
@@ -17,6 +17,7 @@ function marquerEssaiUtilise() {
 }
 
 if (btnAnalyser) {
+
     btnAnalyser.addEventListener('click', async function () {
 
         const texte = document.getElementById('texte-utilisateur').value.trim();
@@ -28,11 +29,20 @@ if (btnAnalyser) {
                 '<p><strong>Veuillez coller un texte à analyser.</strong></p>';
             return;
         }
-     
-        // =============================
-        // CORRECTION ORTHOGRAPHIQUE
-        // =============================
+
+        // 2. Vérification : essai déjà utilisé
+        if (essaiDejaUtilise()) {
+            zoneResultat.innerHTML =
+                '<h3>Essai gratuit déjà utilisé</h3>' +
+                '<p>Vous avez déjà bénéficié de l\'analyse gratuite. ' +
+                'Pour continuer, choisissez un service payant.</p>' +
+                '<a href="#tarifs" class="btn">Voir les tarifs</a>';
+            return;
+        }
+
+        // 3. CORRECTION ORTHOGRAPHIQUE (LanguageTool)
         if (type === 'orthographe') {
+
             zoneResultat.innerHTML = '<p>Analyse en cours...</p>';
 
             try {
@@ -51,10 +61,9 @@ if (btnAnalyser) {
                 const erreurs = data.matches;
 
                 if (erreurs.length === 0) {
-                    zoneResultat.innerHTML = `
-                        <h3>Résultat de la correction</h3>
-                        <p><strong>Aucune erreur détectée.</strong> Votre texte est propre.</p>
-                    `;
+                    zoneResultat.innerHTML =
+                        '<h3>Résultat de la correction</h3>' +
+                        '<p><strong>Aucune erreur détectée.</strong> Votre texte est propre.</p>';
                     marquerEssaiUtilise();
                     return;
                 }
@@ -65,44 +74,34 @@ if (btnAnalyser) {
                         return '<code>' + r.value + '</code>';
                     }).join(', ');
 
-                    return `
-                        <li>
-                            <strong>« ${extrait} »</strong>
-                            <br>
-                            <span style="font-size:14px;color:#4B5568;">
-                                ${err.message}
-                            </span>
-                            ${suggestions ? '<br><span style="font-size:14px;">Suggestions : ' + suggestions + '</span>' : ''}
-                        </li>
-                    `;
+                    return '<li>' +
+                        '<strong>« ' + extrait + ' »</strong><br>' +
+                        '<span style="font-size:14px;color:#4B5568;">' + err.message + '</span>' +
+                        (suggestions ? '<br><span style="font-size:14px;">Suggestions : ' + suggestions + '</span>' : '') +
+                        '</li>';
                 }).join('');
 
-                zoneResultat.innerHTML = `
-                    <h3>Résultat de la correction</h3>
-                    <p>${erreurs.length} problème(s) détecté(s) :</p>
-                    <ul>${listeErreurs}</ul>
-                    ${erreurs.length > 15 ? '<p><em>Seules les 15 premières erreurs sont affichées.</em></p>' : ''}
-                    <p style="margin-top:20px;color:#4B5568;font-size:14px;">
-                        Cette correction est automatique et gratuite (1 essai).
-                        Pour une correction complète, choisissez un service payant.
-                    </p>
-                `;
+                zoneResultat.innerHTML =
+                    '<h3>Résultat de la correction</h3>' +
+                    '<p>' + erreurs.length + ' problème(s) détecté(s) :</p>' +
+                    '<ul>' + listeErreurs + '</ul>' +
+                    (erreurs.length > 15 ? '<p><em>Seules les 15 premières erreurs sont affichées.</em></p>' : '') +
+                    '<p style="margin-top:20px;color:#4B5568;font-size:14px;">' +
+                    'Cette correction est automatique et gratuite (1 essai). ' +
+                    'Pour une correction complète, choisissez un service payant.</p>';
 
                 marquerEssaiUtilise();
+                return;
 
             } catch (erreur) {
-                zoneResultat.innerHTML = `
-                    <p><strong>Erreur :</strong> impossible de contacter le service de correction.
-                    Vérifiez votre connexion internet ou réessayez plus tard.</p>
-                `;
-                }
-
-            return; // On sort ici, pas besoin de continuer
+                zoneResultat.innerHTML =
+                    '<p><strong>Erreur :</strong> impossible de contacter le service de correction. ' +
+                    'Vérifiez votre connexion internet ou réessayez plus tard.</p>';
+                return;
+            }
         }
 
-        // =============================
-        // ANALYSES LOCALES (structure, lisibilité, répétitions)
-        // =============================
+        // 4. ANALYSES LOCALES (structure, lisibilité, répétitions)
         const mots = texte.split(/\s+/).filter(function (m) { return m.length > 0; }).length;
         const phrases = texte.split(/[.!?]+/).filter(function (p) { return p.trim().length > 0; }).length;
         const paragraphes = texte.split(/\n\s*\n/).filter(function (p) { return p.trim().length > 0; }).length;
@@ -111,32 +110,32 @@ if (btnAnalyser) {
         let contenu = '';
 
         if (type === 'structure') {
-            contenu = `
-                <ul>
-                    <li>Nombre de mots : <strong>${mots}</strong></li>
-                    <li>Nombre de phrases : <strong>${phrases}</strong></li>
-                    <li>Nombre de paragraphes : <strong>${paragraphes}</strong></li>
-                    <li>Mots par phrase (moyenne) : <strong>${motsParPhrase}</strong></li>
-                    <li>${motsParPhrase > 25
-                        ? 'Attention : vos phrases sont longues, pensez à les raccourcir.'
-                        : 'Longueur de phrase correcte.'}</li>
-                </ul>
-            `;
+            contenu =
+                '<ul>' +
+                '<li>Nombre de mots : <strong>' + mots + '</strong></li>' +
+                '<li>Nombre de phrases : <strong>' + phrases + '</strong></li>' +
+                '<li>Nombre de paragraphes : <strong>' + paragraphes + '</strong></li>' +
+                '<li>Mots par phrase (moyenne) : <strong>' + motsParPhrase + '</strong></li>' +
+                '<li>' + (motsParPhrase > 25
+                    ? 'Attention : vos phrases sont longues, pensez à les raccourcir.'
+                    : 'Longueur de phrase correcte.') + '</li>' +
+                '</ul>';
+
         } else if (type === 'lisibilite') {
             const score = motsParPhrase < 15 ? 'Facile'
                         : motsParPhrase < 25 ? 'Moyen'
                         : 'Difficile';
-            contenu = `
-                <ul>
-                    <li>Score de lisibilité : <strong>${score}</strong></li>
-                    <li>Mots par phrase : <strong>${motsParPhrase}</strong></li>
-                    <li>${motsParPhrase < 15
-                        ? 'Texte facile à lire.'
-                        : motsParPhrase < 25
-                        ? 'Texte de difficulté moyenne.'
-                        : 'Texte difficile à lire. Raccourcissez vos phrases.'}</li>
-                </ul>
-            `;
+            contenu =
+                '<ul>' +
+                '<li>Score de lisibilité : <strong>' + score + '</strong></li>' +
+                '<li>Mots par phrase : <strong>' + motsParPhrase + '</strong></li>' +
+                '<li>' + (motsParPhrase < 15
+                    ? 'Texte facile à lire.'
+                    : motsParPhrase < 25
+                    ? 'Texte de difficulté moyenne.'
+                    : 'Texte difficile à lire. Raccourcissez vos phrases.') + '</li>' +
+                '</ul>';
+
         } else if (type === 'repetitions') {
             const motsListe = texte.toLowerCase().match(/\b[a-zàâçéèêëîïôûùüÿñæœ]{4,}\b/g) || [];
             const compteur = {};
@@ -158,30 +157,13 @@ if (btnAnalyser) {
                 : '<p>Aucune répétition excessive détectée.</p>';
         }
 
-        zoneResultat.innerHTML = `
-            <h3>Résultat de l'analyse</h3>
-            ${contenu}
-            <p style="margin-top:20px;color:#4B5568;font-size:14px;">
-                Cette analyse est automatique et gratuite (1 essai).
-                Pour une correction complète, choisissez un service payant.
-            </p>
-        `;
+        zoneResultat.innerHTML =
+            '<h3>Résultat de l\'analyse</h3>' +
+            contenu +
+            '<p style="margin-top:20px;color:#4B5568;font-size:14px;">' +
+            'Cette analyse est automatique et gratuite (1 essai). ' +
+            'Pour une correction complète, choisissez un service payant.</p>';
 
         marquerEssaiUtilise();
     });
-    }
-        // 2. Vérification : essai déjà utilisé
-        if (essaiDejaUtilise()) {
-            zoneResultat.innerHTML = `
-                <h3>Essai gratuit déjà utilisé</h3>
-                <p>
-                    Vous avez déjà bénéficié de l'analyse gratuite.
-                    Pour continuer, choisissez un service payant.
-                </p>
-                <a href="#tarifs" class="btn">Voir les tarifs</a>
-            `;
-            return;
-        }
-        
-       
-       
+}
