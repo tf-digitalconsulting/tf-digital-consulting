@@ -772,3 +772,97 @@ footer {
         transform: none;
     }
 }
+/* =========================
+   COMMENT ÇA MARCHE
+========================= */
+
+.processus-section {
+    padding: clamp(56px, 8vw, 96px) var(--marge);
+    background: var(--papier);
+}
+
+.etapes-grille {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 24px;
+    margin-top: 50px;
+}
+
+.etape-carte {
+    position: relative;
+    padding: 36px 28px;
+    background: var(--blanc);
+    border: 1px solid var(--filet);
+    border-radius: 6px;
+    transition: transform 0.2s, box-shadow 0.2s;
+}
+
+.etape-carte:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 12px 30px rgba(18, 32, 58, 0.08);
+}
+
+.etape-num {
+    font-family: var(--titre);
+    font-weight: 800;
+    font-size: 42px;
+    color: var(--sarcelle-clair);
+    line-height: 1;
+    margin-bottom: 18px;
+}
+
+.etape-carte h3 {
+    font-family: var(--titre);
+    font-weight: 700;
+    font-size: 20px;
+    color: var(--encre);
+    margin-bottom: 12px;
+}
+
+.etape-carte p {
+    color: var(--gris);
+    font-size: 16px;
+}
+
+/* =========================
+   TÉMOIGNAGES
+========================= */
+
+.temoignages-section {
+    padding: clamp(56px, 8vw, 96px) var(--marge);
+    background: var(--blanc);
+}
+
+.temoignages-grille {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 24px;
+    margin-top: 50px;
+}
+
+.temoignage-carte {
+    position: relative;
+    padding: 32px 28px;
+    background: var(--papier);
+    border-left: 4px solid var(--sarcelle);
+    border-radius: 4px;
+}
+
+.temoignage-texte {
+    font-size: 16px;
+    line-height: 1.7;
+    color: var(--encre);
+    font-style: italic;
+    margin-bottom: 22px;
+}
+
+.temoignage-auteur {
+    font-size: 15px;
+    color: var(--gris);
+    line-height: 1.4;
+}
+
+.temoignage-auteur strong {
+    color: var(--encre);
+    font-weight: 700;
+}
