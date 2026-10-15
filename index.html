@@ -34,8 +34,9 @@
 
             <ul class="menu">
                 <li><a href="#accueil">Accueil</a></li>
-                <li><a href="#apropos">À propos</a></li>
+                <li><a href="#outil">outil</a></li>
                 <li><a href="#services">Services</a></li>
+                <li><a href="#tarifs">tarifs</a></li>
                 <li><a href="#realisations">Réalisations</a></li>
                 <li><a href="#contact">Contact</a></li>
             </ul>
@@ -69,12 +70,12 @@
 
                 <div class="boutons">
 
-                    <a href="#services" class="btn">
-                        Nos services
+                    <a href="#outil" class="btn">
+                        Essayer l'outil
                     </a>
 
                     <a href="#contact" class="btn btn-secondaire">
-                        Nous contacter
+                        Demander un service
                     </a>
                   
                 </div>
@@ -82,7 +83,47 @@
             </div>
 
         </section>
+        <!-- OUTIL EN LIGNE -->
+         <section id="outil" class="outil-section">
+            <div class="section-introduction">
+                <p class="titre-section">OUTIL EN LIGNE</p>
+                <h2>Analysez cotre documenten un clic</h2>
+                <p class="texte-section">
+                    Collez votre texte ci-dessous et obtenez immediatement une analyse gratuite de votre document.
+                    Pour une correction complète ou une rédaction sur mesure, choisissez un service payant.
+                </p>
+            </div>
+            <div class="outil-boite">
+                <label for="texte-utilisateur" class="outil-label">
+                    Votre texte
+                </label>
 
+                <textarea id="texte-utilisateur"
+                placeholder="coller ici votre document (TDR, rapport, cv, lettre...)">
+                </textarea>
+                <div class="outil-action">
+                    <select id="type-analyse">
+                        <option value="structure">Analyse de structure</option>
+                        <option value="lisibilite">Lisibilité</option>
+                        <option value="repetitions">répétitions</option>
+                    </select>
+                    <button id="btn-analyser" class="btn" type="button">
+                        Analyser gratuitement
+                    </button>
+
+                </div>
+                <div id="resultat" class="resultat"></div>
+                <div class="outil-premium">
+                    <p>
+                        <strong>Besoin d'une version complète?</strong>
+                        Correction approfondie, mise en forme professionnelle, rédaction de TDR, CV ou rapports:
+                         ce sont des services réalisés sur mesure.
+                    </p>
+                    <a href="#tarifs" class="btn">Voir les tarifs</a>
+                </div>
+
+            </div>
+         </section>
 
         <!-- À PROPOS -->
         <section id="apropos" class="section">
@@ -271,7 +312,88 @@
 
         </section>
 
+        <!-- TARIFS -->
+         <section id="tarifs" class="tarifs-section">
+            <div class="section-introduction">
+                <p class="titre-section">TARIFS</p>
+                <h2>Des prix clairs, adaptés à votre besoin</h2>
+                <p class="texte-section">
+                  L'analyse automatique est gratuite(1 essai par visiteur).
+                  Tous les autres services sont réalisés sur mesure et facturés selon la  complexité du document.
+                </p>
+            </div>
+            <div class="tarifs-grille">
 
+                <!-- ANALYSE GRATUITE -->
+                 <div class="tarif-carte">
+                    <h3>Analyse automatique</h3>
+                    <p class="prix">Gratuit</p>
+                    <p class="tarif-detail">1 essai offert</p>
+                    <ul>
+                        <li>comptage de mots/ phrases</li>
+                        <li>Analyse de structure</li>
+                        <li>Détection de répétitions</li>
+                        <li>Détection de fautes d'orthographe</li>
+                    </ul>
+                    <a href="#outil" class="btn btn-secondaire">Essayer</a>
+                 </div>
+                 <!-- CORRECTION -->
+                  <div class="tarif-carte">
+                    <h3>Correction & relecture</h3>
+                    <p class="prix">A partir de 3000FCFA                    
+                    </p>
+                    <ul>
+                        <li>orthographe et grammaire</li>
+                        <li>amélioration du style</li>
+                        <li>Livraison sous 48H</li>
+                    </ul>
+                    <a href="#contact" class="btn">Demander</a>
+                  </div>
+                  <!-- CV -->
+                   <div class="tarif-carte">
+                      <h3>CV professionnel</h3>
+                      <p class="prix"> A partir de 7000 FCFA</p>
+                      <ul>
+                        <li>Rédaction complète</li>
+                        <li>Mise en forme moderne</li>
+                        <li>Version PDF + Word</li>
+                        <li>Livraison sous 4 jours</li>
+                      </ul>
+                      <a href="#contact" class="btn">Demander</a>
+                   </div>
+                   <!-- TDR / RAPPORTS (populaire) -->
+                    <div class="tarif-carte tarif-populaire" >
+                       <span class="badge"> populaire</span>
+                       <h3>TDR & Rapports</h3>
+                       <p class="prix">À partir de 17000 FCFA</p>
+                       <ul>
+                        <li>Rédaction complète</li>
+                        <li>Structuration professionnelle</li>
+                        <li>Prémiere livaison sous 4 jours</li>
+                        <li>Révisions incluses</li>
+                        <li>Livraison final sous 7 jours</li>
+                        </ul>
+                        <a href="#contact" class="btn">Demander</a>
+                    </div>
+            </div>
+            <!-- AUTRES PLATEFORMES -->
+             <div class="autres-plateformes">
+                <p>Retrouvez-moi aussi sur : </p>
+                <div class="plateformes-liens">
+                    <a href="https://www.fiverr.com/tryphosefoning"
+                    target="_blank"
+                    class="btn btn-secondaire">
+                     Fiverr
+                    </a>
+                    <a href="https://comeup.com/@ngouegnifoning"
+                    target="_blank"
+                    class="btn btn-secondaire">
+                     ComeUp
+                     </a>
+                </div>
+             </div>
+
+         </section>
         <!-- RÉALISATIONS -->
         <section id="realisations" class="realisations-section">
 
@@ -473,6 +595,17 @@
                         </select>
 
                     </div>
+                    <!-- TYPE DE DEMANDE -->
+                     <div class="form-group">
+                        <label for="type-demande">Type de Demande</label>
+                        <select id="type-demande" name="type-demande" required>
+                            <option value="">Sélectionnez</option>
+                            <option value="service-manuel"> Service manuel(payant)</option>
+                            <option value="outil-premium">Version premium de l'outil</option>
+                            <option value="devis">Demande de devis</option>
+                            <option value="autre">Autre</option>
+                        </select>
+                     </div>
                   <!--MESSAGE--> 
                   <div class="form-group">
                     <label for="message">
