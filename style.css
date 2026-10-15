@@ -823,11 +823,11 @@ footer {
     color: var(--gris);
     font-size: 16px;
 }
-/* =========================
+/*  =========================
    TÉMOIGNAGES
 ========================= */
 
-.temoignages-section {
+.temoignage-section {
     padding: clamp(56px, 8vw, 96px) var(--marge);
     background: var(--blanc);
 }
@@ -843,7 +843,7 @@ footer {
         grid-template-columns: repeat(2, 1fr);
     }
 }
-@media (max-width; 600px) {
+@media (max-width: 600px) {
     .temoignage-grille {
         grid-template-columns: 1fr; 
     }
