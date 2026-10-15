@@ -88,7 +88,7 @@
          <section id="outil" class="outil-section">
             <div class="section-introduction">
                 <p class="titre-section">OUTIL EN LIGNE</p>
-                <h2>Analysez cotre documenten un clic</h2>
+                <h2>Analysez votre document en un clic</h2>
                 <p class="texte-section">
                     Collez votre texte ci-dessous et obtenez immediatement une analyse gratuite de votre document.
                     Pour une correction complète ou une rédaction sur mesure, choisissez un service payant.
@@ -459,12 +459,9 @@
             <ul class="paiement-liste">
                 <li>
                     <strong>MTN Mobile Money</strong>
-                    <span>Envoyez le montant au numéro communiqué après devis.</span>
+                    <span>672 273 557 - Envoyez le montant au numéro communiqué après devis.</span>
                 </li>
-                <li>
-                    <strong>Orange Money</strong>
-                    <span>Même principe, à votre convenance.</span>
-                </li>
+                
             </ul>
         </div>
 
@@ -651,170 +648,172 @@
                     Décrivez-nous votre besoin et nous vous répondons dans les meilleurs délais.
                     
                 </p>
-                <form class=" contact-form"
-                 action="https://formspree.io/f/xwlvonkk"
-                 method="POST"
-                 enctype="multipart/form-data"
-                  >
+                <!-- BANDEAU DE RÉASSURANCE -->
+<div class="form-reassurance">
+    <div class="reassurance-item">
+        <span class="reassurance-icon">⏱️</span>
+        <span>Réponse sous 24h ouvrées</span>
+    </div>
+    <div class="reassurance-item">
+        <span class="reassurance-icon">✓</span>
+        <span>Aucun engagement avant le devis</span>
+    </div>
+    <div class="reassurance-item">
+        <span class="reassurance-icon">🔒</span>
+        <span>Vos informations restent confidentielles</span>
+    </div>
+</div>
 
-                   <!-- NOM -->
-                    <div class="form-group">
+<form class="contact-form"
+      action="https://formspree.io/f/xwlvonkk"
+      method="POST"
+      enctype="multipart/form-data">
 
-                        <label for="nom">
-                            Nom et prénom 
-                        </label>
-                        <input 
-                              type="text"
-                              id="nom"
-                              name="nom"
-                              placeholder="votre nom et prénom"
-                              autocomplete="name"
-                              required
-                              >
-                              
-                    </div>
+    <!-- NOM -->
+    <div class="form-group">
+        <label for="nom">Nom et prénom</label>
+        <input
+            type="text"
+            id="nom"
+            name="nom"
+            placeholder="Votre nom et prénom"
+            autocomplete="name"
+            required>
+    </div>
 
-                    <!--TELEPHONE-->
-                    <div class="form-group">
-                        <label for="telephone">
-                            téléphone / whatsapp
-                        </label>
-                        <input 
-                        type="tel"
-                        id="telephone"
-                        name="telephone"
-                        placeholder="Exemple : +237 6XX XXX XXX"
-                        autocomplete="tel"
-                        required
-                        >
+    <!-- TELEPHONE -->
+    <div class="form-group">
+        <label for="telephone">Téléphone / WhatsApp</label>
+        <input
+            type="tel"
+            id="telephone"
+            name="telephone"
+            placeholder="Exemple : +237 6XX XXX XXX"
+            autocomplete="tel"
+            required>
+    </div>
 
-                    </div>
-                    <!--EMAIL-->
-                    <div="form-group">
-                        <label for="email">
-                            Adresse e-mail
-                        </label>
-                        <input 
-                        type="email"
-                        id="email"
-                        name="email"
-                        placeholder="votre@email.com"
-                        autocomplete="email"
-                        >
+    <!-- EMAIL -->
+    <div class="form-group">
+        <label for="email">Adresse e-mail</label>
+        <input
+            type="email"
+            id="email"
+            name="email"
+            placeholder="votre@email.com"
+            autocomplete="email">
+    </div>
 
-                    </div>
-                    <!--SERVICE-->
-                    <div class="form-group">
-                        <label for="service">
-                            service souhaité
-                        </label>
-                        <select id="service"
-                        name="service"
-                        required
-                        >
+    <!-- SERVICE -->
+    <div class="form-group">
+        <label for="service">Service souhaité</label>
+        <select id="service" name="service" required>
+            <option value="">Sélectionnez un service</option>
+            <option value="saisie">Saisie de documents</option>
+            <option value="redaction">Rédaction de documents</option>
+            <option value="correction">Correction et relecture</option>
+            <option value="contenus">Création de contenus rédactionnels</option>
+            <option value="mise-en-forme">Mise en forme professionnelle</option>
+            <option value="tdr">Rédaction des TDR</option>
+            <option value="rapport">Rédaction des rapports</option>
+            <option value="compte-rendu">Rédaction des comptes rendus</option>
+            <option value="autre">Autre demande</option>
+        </select>
+    </div>
 
-                          <option value="">
-                            Sélectionnez un service
-                          </option>
+    <!-- TYPE DE DEMANDE -->
+    <div class="form-group">
+        <label for="type-demande">Type de demande</label>
+        <select id="type-demande" name="type-demande" required>
+            <option value="">Sélectionnez</option>
+            <option value="service-manuel">Service manuel (payant)</option>
+            <option value="outil-premium">Version premium de l'outil</option>
+            <option value="devis">Demande de devis</option>
+            <option value="autre">Autre</option>
+        </select>
+    </div>
 
-                          <option value="saisie">
-                            Saisie de documents
-                          </option>
+    <!-- BUDGET ESTIMÉ -->
+    <div class="form-group">
+        <label for="budget">
+            Budget estimé
+            <span>(facultatif)</span>
+        </label>
+        <select id="budget" name="budget">
+            <option value="">Je ne sais pas encore</option>
+            <option value="moins-5k">Moins de 5 000 FCFA</option>
+            <option value="5k-15k">Entre 5 000 et 15 000 FCFA</option>
+            <option value="15k-50k">Entre 15 000 et 50 000 FCFA</option>
+            <option value="plus-50k">Plus de 50 000 FCFA</option>
+        </select>
+    </div>
 
-                          <option value="redaction">
-                            rédaction de documents
-                          </option>
+    <!-- URGENT -->
+    <div class="form-group form-group-checkbox">
+        <label class="checkbox-label">
+            <input
+                type="checkbox"
+                id="urgent"
+                name="urgent"
+                value="oui">
+            <span>
+                <strong>Projet urgent</strong>
+                <small>Livraison souhaitée en moins de 48h (tarif majoré)</small>
+            </span>
+        </label>
+    </div>
 
-                          <option value="correction">
-                            correction et relecture
-                          </option>
-                           
-                           <option value="contenus">
-                            Création de contenus rédactionnels
-                           </option>
+    <!-- MESSAGE -->
+    <div class="form-group">
+        <label for="message">Décrivez votre besoin</label>
+        <textarea
+            name="message"
+            id="message"
+            rows="6"
+            placeholder="Expliquez-nous ce dont vous avez besoin..."
+            required></textarea>
+    </div>
 
-                           <option value="mise en forme">
-                            Mise en forme professionnelle
-                           </option>
+    <!-- FICHIER -->
+    <div class="form-group">
+        <label for="document">
+            Joindre un document
+            <span>(facultatif)</span>
+        </label>
+        <input type="file"
+            id="document"
+            name="document">
+        <small>Vous pouvez joindre un document à traiter.</small>
+    </div>
 
-                           <option value="tdr">
-                            rédaction des TDR
-                           </option>
+    <!-- BOUTON -->
+    <button type="submit" class="btn formulaire-btn">
+        Envoyer ma demande
+    </button>
 
-                           <option value="rapport">
-                            Rédaction des rapports
-                           </option>
+</form>
 
-                           <option value="compte rendu">
-                            Rédaction des comptes rendus
-                           </option>
-
-                           <option value="autre">
-                            Autre Demande
-                           </option>
-
-                        </select>
-
-                    </div>
-                    <!-- TYPE DE DEMANDE -->
-                     <div class="form-group">
-                        <label for="type-demande">Type de Demande</label>
-                        <select id="type-demande" name="type-demande" required>
-                            <option value="">Sélectionnez</option>
-                            <option value="service-manuel"> Service manuel(payant)</option>
-                            <option value="outil-premium">Version premium de l'outil</option>
-                            <option value="devis">Demande de devis</option>
-                            <option value="autre">Autre</option>
-                        </select>
-                     </div>
-                  <!--MESSAGE--> 
-                  <div class="form-group">
-                    <label for="message">
-                        Décrivez votre besoin
-                    </label>
-                    <textarea 
-                     name="message"
-                     id="message"
-                     rows="6"
-                     placeholder="Expliquez-nous ce dont vous avez besoin..."
-                     required
-                     >
-                    </textarea>
-
-                  </div> 
-                  
-                  <!-- FICHIER -->
-                   <div class="form-group">
-
-                    <label for="document">
-                        Joindre un document
-                        <span>(facultatif)</span>
-                    </label>
-
-                    <input type="file"
-                      id="document"
-                       name="document">
-
-                       <small>
-                        vous pouvez joindre un document à traiter.
-
-                       </small>
-
-                   </div>
-
-                   <!-- BOUTON -->
-                    <button
-                     type="submit"
-                     class="btn
-                    formulaire-btn">
-                    envoyer ma Demande
-                </button>
-
-                </form>
+    <!-- CONTACTS DIRECTS -->
+    <div class="contact-direct">
+      <p class="contact-direct-titre">
+        Vous préférez discuter directement ?
+      </p>
+      <div class="contact-direct-liens">
+        <a href="https://wa.me/+237672273557"
+           target="_blank"
+           class="btn btn-whatsapp">
+            WhatsApp : +237 672 273 557
+        </a>
+        <a href="mailto:ngouegni34tryphose@gmail.com"
+           class="btn btn-secondaire">
+            Envoyer un e-mail
+        </a>
+      </div>
+     </div>
                 
-            </div>
+    </div>
 
-        </section>
+    </section>
 
     </main>
     <!-- FAQ SEO -->

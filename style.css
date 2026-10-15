@@ -1012,3 +1012,153 @@ footer {
         font-size: 14px;
     }
 }
+/* =========================
+   FORMULAIRE — RÉASSURANCE
+========================= */
+
+.form-reassurance {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 16px 28px;
+    padding: 20px 24px;
+    margin-bottom: 24px;
+    background: rgba(255, 255, 255, 0.06);
+    border: 1px solid rgba(255, 255, 255, 0.12);
+    border-radius: 6px;
+}
+
+.reassurance-item {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    font-size: 14px;
+    color: #C5CEDD;
+}
+
+.reassurance-icon {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 22px;
+    height: 22px;
+    border-radius: 50%;
+    background: var(--sarcelle);
+    color: var(--blanc);
+    font-size: 13px;
+    font-weight: 700;
+    flex-shrink: 0;
+}
+
+/* =========================
+   FORMULAIRE — CHECKBOX
+========================= */
+
+.form-group-checkbox {
+    margin-bottom: 22px;
+}
+
+.checkbox-label {
+    display: flex !important;
+    align-items: flex-start;
+    gap: 12px;
+    padding: 16px 18px;
+    background: var(--papier);
+    border: 1.5px solid #B7C1CE;
+    border-radius: 6px;
+    cursor: pointer;
+    transition: border-color 0.2s, background 0.2s;
+    font-weight: 400 !important;
+}
+
+.checkbox-label:hover {
+    border-color: var(--sarcelle);
+    background: #F0F5F5;
+}
+
+.checkbox-label input[type="checkbox"] {
+    width: 20px;
+    height: 20px;
+    margin-top: 2px;
+    accent-color: var(--sarcelle);
+    cursor: pointer;
+    flex-shrink: 0;
+}
+
+.checkbox-label span {
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+}
+
+.checkbox-label strong {
+    color: var(--encre);
+    font-size: 15px;
+}
+
+.checkbox-label small {
+    color: var(--gris);
+    font-size: 13px;
+    font-weight: 400;
+}
+
+/* =========================
+   CONTACTS DIRECTS
+========================= */
+
+.contact-direct {
+    margin-top: 36px;
+    padding-top: 32px;
+    border-top: 1px solid rgba(255, 255, 255, 0.15);
+    text-align: center;
+}
+
+.contact-direct-titre {
+    margin-bottom: 20px;
+    color: #C5CEDD;
+    font-size: 16px;
+    font-weight: 600;
+}
+
+.contact-direct-liens {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 14px;
+    justify-content: center;
+}
+
+.contact-direct .btn-whatsapp {
+    background: #128C7E;
+    border-color: #128C7E;
+    color: var(--blanc);
+}
+
+.contact-direct .btn-whatsapp:hover {
+    background: #075E54;
+    border-color: #075E54;
+}
+
+.contact-direct .btn-secondaire {
+    border-color: rgba(255, 255, 255, 0.4);
+    color: var(--blanc);
+}
+
+.contact-direct .btn-secondaire:hover {
+    background: rgba(255, 255, 255, 0.1);
+    border-color: var(--blanc);
+}
+
+/* Version mobile */
+@media (max-width: 768px) {
+    .form-reassurance {
+        padding: 16px 18px;
+    }
+
+    .reassurance-item {
+        font-size: 13px;
+    }
+
+    .contact-direct-liens .btn {
+        flex: 1 1 100%;
+        text-align: center;
+    }
+}
