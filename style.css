@@ -834,11 +834,20 @@ footer {
 
 .temoignage-grille {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    grid-template-columns: repeat(auto-fit, minmax(0, 1fr));
     gap: 24px;
     margin-top: 50px;
 }
-
+@media (max-width: 900px) {
+    .temoignage-grille {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+@media (max-width; 600px) {
+    .temoignage-grille {
+        grid-template-columns: 1fr; 
+    }
+}
 .temoignage-carte {
     position: relative;
     padding: 32px 28px;
