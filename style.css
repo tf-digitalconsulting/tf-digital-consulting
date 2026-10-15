@@ -834,7 +834,7 @@ footer {
 
 .temoignage-grille {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(0, 1fr));
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
     gap: 24px;
     margin-top: 50px;
 }
@@ -873,4 +873,142 @@ footer {
 .temoignage-auteur strong {
     color: var(--encre);
     font-weight: 700;
+}
+/* =========================
+   MODALITÉS DE PAIEMENT
+========================= */
+
+.paiement-section {
+    padding: clamp(56px, 8vw, 96px) var(--marge);
+    background: var(--papier);
+}
+
+.paiement-grille {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(0, 1fr));
+    gap: 24px;
+    margin-top: 50px;
+}
+
+.paiement-carte {
+    position: relative;
+    padding: 32px 28px;
+    background: var(--blanc);
+    border: 1px solid var(--filet);
+    border-radius: 6px;
+    transition: transform 0.2s, box-shadow 0.2s;
+}
+
+.paiement-carte:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 12px 30px rgba(18, 32, 58, 0.08);
+}
+
+.paiement-carte-accent {
+    border-left: 4px solid var(--sarcelle);
+}
+
+.paiement-carte h3 {
+    font-family: var(--titre);
+    font-weight: 700;
+    font-size: 20px;
+    color: var(--encre);
+    margin-bottom: 8px;
+}
+
+.paiement-sous-titre {
+    font-size: 14px;
+    color: var(--gris);
+    margin-bottom: 20px;
+    font-style: italic;
+}
+
+.paiement-liste {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.paiement-liste li {
+    padding: 12px 0;
+    border-bottom: 1px solid var(--filet);
+}
+
+.paiement-liste li:last-child {
+    border-bottom: none;
+}
+
+.paiement-liste strong {
+    display: block;
+    color: var(--encre);
+    font-weight: 700;
+    font-size: 16px;
+    margin-bottom: 4px;
+}
+
+.paiement-liste span {
+    font-size: 14px;
+    color: var(--gris);
+    line-height: 1.5;
+}
+
+.paiement-etapes {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    counter-reset: etape-counter;
+}
+
+.paiement-etapes li {
+    position: relative;
+    padding: 12px 0 12px 38px;
+    font-size: 15px;
+    color: var(--gris);
+    line-height: 1.6;
+    border-bottom: 1px solid var(--filet);
+    counter-increment: etape-counter;
+}
+
+.paiement-etapes li:last-child {
+    border-bottom: none;
+}
+
+.paiement-etapes li::before {
+    content: counter(etape-counter);
+    position: absolute;
+    left: 0;
+    top: 12px;
+    width: 26px;
+    height: 26px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+    background: var(--sarcelle);
+    color: var(--blanc);
+    font-size: 13px;
+    font-weight: 700;
+}
+
+.paiement-note {
+    margin-top: 40px;
+    padding: 20px 24px;
+    background: #DCEFEE;
+    border-left: 4px solid var(--sarcelle);
+    border-radius: 4px;
+    font-size: 15px;
+    color: var(--encre);
+    line-height: 1.6;
+}
+
+/* Version mobile */
+@media (max-width: 768px) {
+    .paiement-carte {
+        padding: 26px 22px;
+    }
+
+    .paiement-note {
+        padding: 18px 20px;
+        font-size: 14px;
+    }
 }
