@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+sitemap: https://tf-digital-consulting.netlify.app/sitemap.xml

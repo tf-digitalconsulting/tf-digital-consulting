@@ -75,6 +75,11 @@ header {
     font-size: 20px;
     color: var(--encre);
     text-decoration: none;
+    logo-img{
+        height: 45px; /*Ajuste cette valeur si le logo est trop grand ou trop petit */
+        width: auto;
+        display: block;
+    }
 }
  
 .logo-mark {
@@ -1161,4 +1166,34 @@ footer {
         flex: 1 1 100%;
         text-align: center;
     }
+}
+/* Footer Liens */
+.footer-content {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 15px;
+}
+.footer-liens a {
+    color: #AAB5C8;
+    text-decoration: none;
+    font-size: 14px;
+    margin-left: 20px;
+    transition: color 0.2s;
+}
+.footer-liens a:hover {
+    color: var(--blanc);
+}
+@media (max-width: 768px) {
+    .footer-content { flex-direction: column; text-align: center; }
+    .footer-liens a { margin: 0 10px; }
+}
+/*Réduction de la taille du logo*/
+.logo-img{
+    height: 100px;/* Tu peux essayer 35px ou 45px si ce n'est pas parfait*/
+    width: auto;
+    display: block;
 }
